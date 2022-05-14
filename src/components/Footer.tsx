@@ -28,7 +28,12 @@ const Footer = (): JSX.Element => {
   return (
     <Box
       bg={useColorModeValue('gray.100', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
+      color={useColorModeValue('gray.700', 'gray.200')}
+      position="fixed"
+      left={0}
+      right={0}
+      bottom={0}
+      >
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid
           templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 1fr 1fr' }}
