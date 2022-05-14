@@ -6,7 +6,6 @@ const Home = (): JSX.Element => {
     return (
         <>
             <WithSubnavigation />
-
             <Footer />
         </>
     );
