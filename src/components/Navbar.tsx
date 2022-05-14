@@ -106,7 +106,12 @@ const Navbar = (): JSX.Element => {
                                 Update Settings
                             </MenuItem>
                             <MenuDivider />
-                            <MenuItem>
+                            <MenuItem
+                                onClick={() => {
+                                    localStorage.removeItem("user_token");
+                                    window.location.href = "/";
+                                }}
+                            >
                                 Logout
                             </MenuItem>
                         </>
@@ -116,7 +121,9 @@ const Navbar = (): JSX.Element => {
                                     <Text fontSize="2xl">Account</Text>
                                 </Center>
                                 <MenuDivider />
-                                <MenuItem>
+                                <MenuItem
+                                    onClick={() => window.location.href = "/register"}
+                                >
                                     Sign Up
                                 </MenuItem>
                             </>

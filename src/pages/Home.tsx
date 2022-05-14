@@ -54,7 +54,12 @@ const Home = (): JSX.Element => {
                         colorScheme={'blue'}
                         bg={'blue.400'}
                         _hover={{ bg: 'blue.500' }}
-                        onClick={() => window.location.href = '/register'}>
+                        onClick={() => {
+                            if (localStorage.getItem("user_token"))
+                                window.location.href = "/dashboard";
+                            else
+                                window.location.href = "/register";
+                        }}>
                         Get started
                       </Button>
                     </Stack>
