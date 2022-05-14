@@ -27,7 +27,6 @@ const NotFound = (): JSX.Element => {
                 </Button>
             </Stack>
         </Center>
-        <Footer/>
     </>
   );
 }
