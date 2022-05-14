@@ -24,7 +24,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   return (
     <Box
       bg={useColorModeValue('gray.100', 'gray.900')}

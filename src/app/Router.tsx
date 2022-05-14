@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from "../pages/Home";
+import NotFound from "../pages/404";
 
 const Router = (): JSX.Element => {
     return (
@@ -9,9 +10,9 @@ const Router = (): JSX.Element => {
                 <Route path="/" element={<Home />} />
 
                 {/* 404 Not Found page */}
-                <Route element={<Landing />} />
-                <Route path='*' element={<Landing />} />
-                <Route path='' element={<Landing />} />
+                <Route element={<NotFound />} />
+                <Route path='*' element={<NotFound />} />
+                <Route path='' element={<NotFound />} />
             </Routes>
         </BrowserRouter>
     );
