@@ -36,55 +36,93 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 const Navbar = (): JSX.Element => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  return (
-    <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
-        <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Text fontSize="2xl" fontWeight="bold">EpyTodo</Text>
 
-          <Flex alignItems={'center'}>
-            <Stack direction={'row'} spacing={7}>
-              <Button onClick={toggleColorMode}>
-                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-              </Button>
+    const isConnected = (): boolean => {
+        if (localStorage.getItem("user_token"))
+            return true;
+        return false;
+    }
 
-              <Menu>
-                <MenuButton
-                  as={Button}
-                  rounded={'full'}
-                  variant={'link'}
-                  cursor={'pointer'}
-                  minW={0}>
-                  <Avatar
-                    size={'sm'}
-                    src={'https://avatars.dicebear.com/api/male/username.svg'}
-                  />
-                </MenuButton>
-                <MenuList alignItems={'center'}>
-                  <br />
-                  <Center>
-                    <Avatar
-                      size={'2xl'}
-                      src={'https://avatars.dicebear.com/api/male/username.svg'}
-                    />
-                  </Center>
-                  <br />
-                  <Center>
-                    <p>Username</p>
-                  </Center>
-                  <br />
-                  <MenuDivider />
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
-                  <MenuItem>Logout</MenuItem>
-                </MenuList>
-              </Menu>
-            </Stack>
-          </Flex>
-        </Flex>
-      </Box>
-    </>
-  );
+    return (
+        <>
+          <Box bg={useColorModeValue('gray.100', 'gray.900')} px="4">
+            <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+              <Text fontSize="2xl" fontWeight="bold">EpuyTodo</Text>
+
+              <Flex alignItems={'center'}>
+                <Stack direction={'row'} spacing={7}>
+                  <Button onClick={toggleColorMode}>
+                    {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                  </Button>
+
+                  <Menu>
+                    <MenuButton
+                      as={Button}
+                      rounded='full'
+                      variant='link'
+                      cursor='pointer'
+                      minW={0}>
+                      <Avatar
+                        size="sm"
+                        src="https://cdn-icons-png.flaticon.com/512/3940/3940403.png"
+                      />
+                    </MenuButton>
+                    <MenuList alignItems="center" px="5">
+                        <br />
+                        {isConnected() ?
+                        <>
+                            <Center>
+                            <Avatar
+                                size="2xl"
+                                src="https://cdn-icons-png.flaticon.com/512/3940/3940403.png"
+                            />
+                            </Center>
+                            <br />
+                            <Center>
+                                <Stack direction={['column']} spacing="3">
+                                    <Center>
+                                        <Text>Username</Text>
+                                    </Center>
+                                    <Center>
+                                        <Text>Dubosclard</Text>
+                                    </Center>
+                                    <Center>
+                                        <Text>leo.dubosclard@epitech.eu</Text>
+                                    </Center>
+                                    <Center>
+                                        <Text>Member since : 2021-12-03</Text>
+                                    </Center>
+                                </Stack>
+                            </Center>
+                            <br />
+                            <MenuDivider />
+                            <MenuItem>
+                                Update Settings
+                            </MenuItem>
+                            <MenuDivider />
+                            <MenuItem>
+                                Logout
+                            </MenuItem>
+                        </>
+                        :
+                            <>
+                                <Center>
+                                    <Text fontSize="2xl">Account</Text>
+                                </Center>
+                                <MenuDivider />
+                                <MenuItem>
+                                    Sign Up
+                                </MenuItem>
+                            </>
+                        }
+                        </MenuList>
+                  </Menu>
+                </Stack>
+              </Flex>
+            </Flex>
+          </Box>
+        </>
+    );
 }
 
 export default Navbar;
