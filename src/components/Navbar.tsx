@@ -47,7 +47,13 @@ const Navbar = (): JSX.Element => {
         <>
           <Box bg={useColorModeValue('gray.100', 'gray.900')} px="4">
             <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-              <Text fontSize="2xl" fontWeight="bold">EpuyTodo</Text>
+              <Link
+              fontSize="2xl"
+              fontWeight="bold"
+              href='/' _hover={{textDecoration:'none'}}
+              textDecoration={'none'}>
+                EpuyTodo
+              </Link>
 
               <Flex alignItems={'center'}>
                 <Stack direction={'row'} spacing={7}>
