@@ -1,8 +1,8 @@
-import Home from "../pages/Home";
+import Router from "./Router";
 
 const App = (): JSX.Element => (
 	<>
-		<Home />
+		<Router />
 	</>
 );
 
