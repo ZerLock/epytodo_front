@@ -1,6 +1,5 @@
 import { Box, Heading, Text, Button, Center, Stack } from '@chakra-ui/react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '../components/Navbar/Navbar';
 
 const NotFound = (): JSX.Element => {
   return (

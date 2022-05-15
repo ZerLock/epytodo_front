@@ -13,7 +13,7 @@ import {
   useToast
 } from "@chakra-ui/react";
 import { useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 import axios from "axios";
 
 const Login = (): JSX.Element => {

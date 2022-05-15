@@ -1,12 +1,11 @@
-import WithSubnavigation from '../components/Navbar';
+import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer';
-import { Container, Stack, Flex, Box, Heading, Text, Button, Image, Icon, IconButton, createIcon, IconProps, useColorModeValue, } from '@chakra-ui/react';
+import { Container, Stack, Flex, Box, Heading, Text, Button, Image, Icon, IconProps, useColorModeValue, } from '@chakra-ui/react';
 
 const Home = (): JSX.Element => {
     return (
         <>
-            <WithSubnavigation />
-
+            <Navbar />
             <Container maxW={'7xl'}>
                 <Stack
                   align={'center'}

@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/Navbar/Navbar';
 import axios from 'axios';
 
 const Register = (): JSX.Element => {
