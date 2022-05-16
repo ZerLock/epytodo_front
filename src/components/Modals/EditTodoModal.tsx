@@ -29,7 +29,7 @@ const EditTodoModal = ({ isOpen, onClose, user_id, task_id }: EditProps): JSX.El
     const toast = useToast();
 
     const handleDeleteTodo = async () => {
-        fetch(`http://${process.env.REACT_APP_API}/todos/${task_id}`, {
+        fetch(`https://${process.env.REACT_APP_API}/todos/${task_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

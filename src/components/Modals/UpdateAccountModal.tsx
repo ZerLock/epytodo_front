@@ -64,7 +64,7 @@ const UpdateAccountModal = ({ isOpen, onClose, user_id }: UpdateAccountProps): J
     }
 
     const handleDeleteAccount = async () => {
-        fetch(`http://${process.env.REACT_APP_API}/users/${user_id}`, {
+        fetch(`https://${process.env.REACT_APP_API}/users/${user_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

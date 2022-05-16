@@ -47,7 +47,7 @@ const Register = (): JSX.Element => {
         try {
             const result = await axios({
                 method: 'post',
-                url: `http://${process.env.REACT_APP_API}/register`,
+                url: `https://${process.env.REACT_APP_API}/register`,
                 data: {
                     name: lastname,
                     firstname: name,

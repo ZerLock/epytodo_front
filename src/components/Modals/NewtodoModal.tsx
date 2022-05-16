@@ -43,7 +43,7 @@ const NewtodoModal = ({ isOpen, onClose, user_id }: NewtodoModalType): JSX.Eleme
             setStatus('');
             return;
         }
-        fetch(`http://${process.env.REACT_APP_API}/todos`, {
+        fetch(`https://${process.env.REACT_APP_API}/todos`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

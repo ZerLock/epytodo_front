@@ -36,7 +36,7 @@ const Login = (): JSX.Element => {
         try {
             const result = await axios({
                 method: "post",
-                url: `http://${process.env.REACT_APP_API}/login`,
+                url: `https://${process.env.REACT_APP_API}/login`,
                 data: {
                     email: email,
                     password: password
