@@ -1,4 +1,4 @@
-import { useToast, Grid, Center } from '@chakra-ui/react';
+import { useToast, Grid, Center, GridItem } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import DashNavbar from '../components/Navbar/Dashnavbar';
 import Navbar from '../components/Navbar/Navbar';
@@ -16,14 +16,6 @@ const Dashboard = (): JSX.Element => {
                 window.location.href = '/';
                 return;
             }
-            toast({
-                title: 'Success',
-                description: 'You have been logged in',
-                position: 'bottom',
-                status: 'success',
-                duration: 5000,
-                isClosable: true,
-            });
             fetch('http://localhost:3000/user', {
                 method: 'GET',
                 headers: {
@@ -63,9 +55,11 @@ const Dashboard = (): JSX.Element => {
             <Center>
                 <Grid templateColumns="repeat(4, 1fr)" gap="20" marginTop="2%">
                     {todos.map((todo: any) => (
-                        <Todo key={todo.id} task_id={todo.id} title={todo.title} desc={todo.description} due_time={todo.due_time} user_id={todo.user_id} />
+                        <GridItem boxShadow="3xl">
+                            <Todo key={todo.id} task_id={todo.id} title={todo.title} desc={todo.description} due_time={todo.due_time} user_id={todo.user_id} />
+                        </GridItem>
                     ))}
-                {account && <NewtodoButton user_id={account.id} />}
+                    {account && <NewtodoButton user_id={account.id} />}
                 </Grid>
             </Center>
         </>

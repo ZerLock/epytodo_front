@@ -10,6 +10,7 @@ import {
     Button,
     Stack,
     useToast,
+    Select,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
@@ -24,7 +25,7 @@ const EditTodoModal = ({ isOpen, onClose, user_id, task_id }: EditProps): JSX.El
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
     const [due_time, setDueTime] = useState('');
-    const [status, setStatus] = useState('');
+    const [status, setStatus] = useState('not started');
     const toast = useToast();
 
     const handleDeleteTodo = async () => {
@@ -96,7 +97,12 @@ const EditTodoModal = ({ isOpen, onClose, user_id, task_id }: EditProps): JSX.El
                             <Input placeholder="title" value={title} onChange={(e: any) => setTitle(e.target.value)} />
                             <Input placeholder="description" value={desc} onChange={(e: any) => setDesc(e.target.value)} />
                             <Input placeholder="due time" value={due_time} onChange={(e: any) => setDueTime(e.target.value)} />
-                            <Input placeholder="status" value={status} onChange={(e: any) => setStatus(e.target.value)} />
+                            <Select value={status} onChange={(e: any) => setStatus(e.target.value)}>
+                                <option value='not started'>not started</option>
+                                <option value='todo'>todo</option>
+                                <option value='in progress'>in progress</option>
+                                <option value='done'>done</option>
+                            </Select>
                         </Stack>
                     </ModalBody>
                     <ModalFooter>
