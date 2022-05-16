@@ -43,7 +43,7 @@ const NewtodoModal = ({ isOpen, onClose, user_id }: NewtodoModalType): JSX.Eleme
             setStatus('');
             return;
         }
-        fetch('http://localhost:3000/todos', {
+        fetch(`http://${process.env.REACT_APP_API}/todos`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ const NewtodoModal = ({ isOpen, onClose, user_id }: NewtodoModalType): JSX.Eleme
                         <Stack direction='column' spacing="3">
                             <Input placeholder="title" value={title} onChange={(e: any) => setTitle(e.target.value)} />
                             <Input placeholder="description" value={desc} onChange={(e: any) => setDesc(e.target.value)} />
-                            <Input placeholder="due time" value={due_time} onChange={(e: any) => setDueTime(e.target.value)} />
+                            <Input placeholder="due time : YYYY-MM-DD HH:MM:SS" value={due_time} onChange={(e: any) => setDueTime(e.target.value)} />
                             <Select value={status} onChange={(e: any) => setStatus(e.target.value)}>
                                 <option value='not started'>not started</option>
                                 <option value='todo'>todo</option>

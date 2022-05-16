@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
@@ -20,20 +19,6 @@ import {
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import UpdateAccountModal from '../Modals/UpdateAccountModal';
 
-const NavLink = ({ children }: { children: ReactNode }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={'#'}>
-    {children}
-  </Link>
-);
-
 type NavbarProps = {
     id: number;
     name: string;
@@ -45,12 +30,6 @@ type NavbarProps = {
 const DashNavbar = ({ id, name, lastname, email, created_at }: NavbarProps): JSX.Element => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-    const isConnected = (): boolean => {
-        if (localStorage.getItem("user_token"))
-            return true;
-        return false;
-    }
 
     return (
         <>
@@ -110,11 +89,11 @@ const DashNavbar = ({ id, name, lastname, email, created_at }: NavbarProps): JSX
                         <br />
                         <MenuDivider />
                         <MenuItem
-							onClick={() => {
-								onOpen();
-							}}
-						>
-                            Update Settings
+						            	onClick={() => {
+						            		onOpen();
+						            	}}
+						            >
+                          Update Settings
                         </MenuItem>
                         <MenuDivider />
                         <MenuItem

@@ -30,7 +30,7 @@ const Footer = (): JSX.Element => {
       bg={useColorModeValue('gray.100', 'gray.900')}
       color={useColorModeValue('gray.700', 'gray.200')}
       position="relative"
-      top={100}
+      top={110}
       left={0}
       right={0}
       bottom={0}

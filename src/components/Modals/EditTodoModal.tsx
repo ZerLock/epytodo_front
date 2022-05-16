@@ -29,7 +29,7 @@ const EditTodoModal = ({ isOpen, onClose, user_id, task_id }: EditProps): JSX.El
     const toast = useToast();
 
     const handleDeleteTodo = async () => {
-        fetch(`http://localhost:3000/todos/${task_id}`, {
+        fetch(`http://${process.env.REACT_APP_API}/todos/${task_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const EditTodoModal = ({ isOpen, onClose, user_id, task_id }: EditProps): JSX.El
             });
             return;
         }
-        fetch(`http://localhost:3000/todos/${task_id}`, {
+        fetch(`http://${process.env.REACT_APP_API}/todos/${task_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -96,7 +96,7 @@ const EditTodoModal = ({ isOpen, onClose, user_id, task_id }: EditProps): JSX.El
                     <Stack direction='column' spacing="3">
                             <Input placeholder="title" value={title} onChange={(e: any) => setTitle(e.target.value)} />
                             <Input placeholder="description" value={desc} onChange={(e: any) => setDesc(e.target.value)} />
-                            <Input placeholder="due time" value={due_time} onChange={(e: any) => setDueTime(e.target.value)} />
+                            <Input placeholder="due time: YYYY-MM-DD HH:MM:SS" value={due_time} onChange={(e: any) => setDueTime(e.target.value)} />
                             <Select value={status} onChange={(e: any) => setStatus(e.target.value)}>
                                 <option value='not started'>not started</option>
                                 <option value='todo'>todo</option>

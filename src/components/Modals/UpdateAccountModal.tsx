@@ -45,7 +45,7 @@ const UpdateAccountModal = ({ isOpen, onClose, user_id }: UpdateAccountProps): J
             setPassword('');
             return;
         }
-        fetch(`http://localhost:3000/users/${user_id}`, {
+        fetch(`http://${process.env.REACT_APP_API}/users/${user_id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ const UpdateAccountModal = ({ isOpen, onClose, user_id }: UpdateAccountProps): J
     }
 
     const handleDeleteAccount = async () => {
-        fetch(`http://localhost:3000/users/${user_id}`, {
+        fetch(`http://${process.env.REACT_APP_API}/users/${user_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',

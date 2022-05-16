@@ -16,7 +16,7 @@ const Dashboard = (): JSX.Element => {
                 window.location.href = '/';
                 return;
             }
-            fetch('http://localhost:3000/user', {
+            fetch(`http://${process.env.REACT_APP_API}/user`, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('user_token')}`
@@ -27,7 +27,7 @@ const Dashboard = (): JSX.Element => {
             .then(res => {
                 console.log("id", res.id)
                 setAccount(res);
-                fetch('http://localhost:3000/user/todos', {
+                fetch(`http://${process.env.REACT_APP_API}/user/todos`, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('user_token')}`

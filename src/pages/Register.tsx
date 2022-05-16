@@ -47,7 +47,7 @@ const Register = (): JSX.Element => {
         try {
             const result = await axios({
                 method: 'post',
-                url: 'http://localhost:3000/register',
+                url: `http://${process.env.REACT_APP_API}/register`,
                 data: {
                     name: lastname,
                     firstname: name,
